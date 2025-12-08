@@ -1,0 +1,47 @@
+{
+  "name": "@tasqalent/shared",
+  "version": "1.0.0",
+  "description": "Shared utilities, types and middlewares for TASQALENT (Node/TS)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "jest --passWithNoTests",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasqalent/tq-shared-node.git"
+  },
+  "keywords": [
+    "freelance",
+    "tasqalent",
+    "tq",
+    "common",
+    "helper",
+    "shared"
+  ],
+  "author": "Youssef Tawakal",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tasqalent/tq-shared-node/issues"
+  },
+  "homepage": "https://github.com/tasqalent/tq-shared-node#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^9.1.2",
+    "jest": "^30.2.0",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.5",
+    "typescript": "^5.9.3"
+  }
+}
