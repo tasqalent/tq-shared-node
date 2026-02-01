@@ -9,5 +9,8 @@ export default tseslint.config(eslint.configs.recommended, ...tseslint.configs.r
       sourceType: 'module',
     },
   },
-  rules: {},
+  rules: {
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/triple-slash-reference': 'off',
+  },
 });
