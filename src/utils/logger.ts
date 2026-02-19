@@ -1,4 +1,5 @@
 import winston from 'winston';
+import { ElasticsearchTransport } from 'winston-elasticsearch';
 import type { Logger, LogContext } from '../types/logger.types';
 
 interface CreateLoggerOptions {
@@ -8,6 +9,18 @@ interface CreateLoggerOptions {
 
 export function createLogger(options: CreateLoggerOptions): Logger {
   const { serviceName, level = process.env.LOG_LEVEL ?? 'info' } = options;
+
+  const transports: winston.transport[] = [new winston.transports.Console()];
+
+  // Optionally enable Elasticsearch via env flag
+  if (process.env.LOG_TO_ELASTICSEARCH === 'true') {
+    const esOptions = {
+      level,
+      indexPrefix: process.env.ELASTICSEARCH_INDEX_PREFIX ?? serviceName,
+    };
+
+    transports.push(new ElasticsearchTransport(esOptions));
+  }
 
   const baseLogger = winston.createLogger({
     level,
