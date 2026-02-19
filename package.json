@@ -1,6 +1,6 @@
 {
   "name": "@tasqalent/shared",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Shared utilities, types and middlewares for TASQALENT (Node/TS)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "cloudinary": "^2.9.0",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "winston": "^3.19.0"
   }
 }
