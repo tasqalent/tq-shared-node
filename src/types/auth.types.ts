@@ -22,6 +22,6 @@ export interface RegisterRequest {
 
 export interface TokenPair {
   accessToken: string;
-  refreshToken?: string;
+  refreshToken: string;
   expiresIn: number;
 }
