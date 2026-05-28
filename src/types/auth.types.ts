@@ -18,7 +18,6 @@ export interface RegisterRequest {
   email: string;
   username: string;
   password: string;
-  role: Role;
 }
 
 export interface TokenPair {
