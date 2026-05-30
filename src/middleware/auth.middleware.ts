@@ -5,6 +5,12 @@ import { ERROR_CODES } from '../constants/errors';
 import { HTTP_STATUS } from '../constants/http-status';
 import { errorResponse } from '../utils/response';
 
+declare module 'express' {
+  interface Request {
+    user?: JwtPayload;
+  }
+}
+
 const BEARER_PREFIX = 'Bearer ';
 
 function extractToken(authHeader: string): string | null {
